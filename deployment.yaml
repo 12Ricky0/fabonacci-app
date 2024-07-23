@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: web
@@ -15,10 +15,10 @@ spec:
       containers:
         - name: client
           image: temple4b/multi-client
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+          # resources:
+          #   limits:
+          #     memory: "512Mi"
+          #     cpu: "1000m"
           ports:
             - containerPort: 3000
 
